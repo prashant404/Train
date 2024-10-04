@@ -1,0 +1,68 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .seat-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .seat {
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #e7f1ff;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .seat:hover {
+    transform: scale(1.05);
+  }
+  
+  .available {
+    background-color: #aaf7a3; /* Light green for available seats */
+  }
+  
+  .booked {
+    background-color: #ff9999; /* Light red for booked seats */
+  }
+  
+  .selected {
+    background-color: #85d7ff; /* Light blue for selected seats */
+  }
+  
+  .seat .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  .list-group-item {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #e7f1ff;
+  }
+  

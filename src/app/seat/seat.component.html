@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Train Seat Reservation</h1>
+  
+    <div class="input-group mb-3">
+      <input 
+        type="number" 
+        [(ngModel)]="requestedSeats" 
+        min="1" 
+        max="7" 
+        placeholder="Enter number of seats" 
+        class="form-control" />
+      <div class="input-group-append">
+        <button (click)="onReserve()" class="btn btn-primary">Reserve Seats</button>
+      </div>
+    </div>
+  
+    <div class="seat-layout">
+      <div *ngFor="let seat of seats" 
+           [ngClass]="{
+             'booked': seat.isBooked, 
+             'available': !seat.isBooked, 
+             'selected': selectedSeats.includes(seat)
+           }" 
+           class="seat" 
+           (click)="onSeatClick(seat)">
+        <span>Row {{seat.row}} Seat {{seat.seatNumber}}</span>
+        <span *ngIf="seat.isBooked" class="badge badge-danger">Booked</span>
+        <span *ngIf="selectedSeats.includes(seat)" class="badge badge-success">Selected</span>
+      </div>
+    </div>
+  
+    <div *ngIf="bookedSeats.length" class="mt-4">
+      <h2 class="text-center">Booked Seats:</h2>
+      <ul class="list-group">
+        <li *ngFor="let seat of bookedSeats" class="list-group-item">
+          Row {{seat.row}}, Seat {{seat.seatNumber}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
